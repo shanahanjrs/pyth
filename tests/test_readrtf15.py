@@ -1,9 +1,10 @@
+from __future__ import print_function
 import unittest
 import os.path
 import glob
 
-import pyth.document
 from pyth.plugins.rtf15.reader import Rtf15Reader
+
 
 class TestRtfMeta(type):
     def __new__(meta, name, bases, dict):
@@ -20,7 +21,7 @@ class TestRtfMeta(type):
         for path in files:
             name = os.path.splitext(os.path.basename(path))[0]
             dict["test_%s" % name] = gen_file_test(path, name)
-            print path, name
+            print(path, name)
 
         return type.__new__(meta, name, bases, dict)
 
@@ -28,7 +29,6 @@ class TestRtfMeta(type):
 class TestRtfFile(unittest.TestCase):
     __metaclass__ = TestRtfMeta
     pass
-
 
 
 if __name__ == '__main__':

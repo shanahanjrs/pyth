@@ -1,17 +1,19 @@
 from setuptools import setup, find_packages
 
-setup(name="pyth",
-      version="0.6.0",
-      packages = find_packages(),
-      zip_safe = False,
+setup(
+    name="pyth3",
+    version="0.6.0",
+    packages=find_packages(),
+    zip_safe=False,
+    install_requires=['six'],
 
-      description="Python text markup and conversion",
-      author="Brendon Hogger",
-      author_email="brendonh@gmail.com",
-      url="http://wiki.github.com/brendonh/pyth",
-      long_description=open('README').read(),
+    description="Python text markup and conversion",
+    author="Brendon Hogger",
+    author_email="brendonh@gmail.com",
+    url="http://wiki.github.com/brendonh/pyth",
+    long_description=open('README').read(),
 
-      classifiers = [
+    classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
@@ -24,5 +26,5 @@ setup(name="pyth",
         "Topic :: Text Processing",
         "Topic :: Text Processing :: Markup",
         "Topic :: Text Processing :: Filters",
-      ],
+    ],
 )
