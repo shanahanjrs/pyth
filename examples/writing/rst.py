@@ -1,4 +1,4 @@
-from pyth.plugins.rst.writer import RSTWriter
+from pyth3.plugins.rst.writer import RSTWriter
 import pythonDoc
 
 if __name__ == "__main__":

@@ -4,8 +4,8 @@ Render documents as RTF 1.5
 http://www.biblioscape.com/rtf15_spec.htm
 """
 
-from pyth import document
-from pyth.format import PythWriter
+from pyth3 import document
+from pyth3.format import PythWriter
 
 from cStringIO import StringIO
 
@@ -60,7 +60,7 @@ class Rtf15Writer(PythWriter):
     def go(self):
         self.listLevel = -1
         self.addSpacing = None
-        
+
         self.target.write('{')
         self._writeHeader()
         self._writeDocument()
@@ -105,7 +105,7 @@ class Rtf15Writer(PythWriter):
         # We need Symbol for list bullets
         output.append(r'{\f%d\fnil\fprq0\fcharset128 Symbol;}' % (i+1))
         self.symbolFontNumber = i+1
-        
+
         output.append('}')
         return "".join(output)
 
@@ -138,7 +138,7 @@ class Rtf15Writer(PythWriter):
 
         output.append('}}')
         return "".join(output)
-    
+
 
     def _getListOverrides(self):
         # I have no idea what the point is of this,
@@ -153,7 +153,7 @@ class Rtf15Writer(PythWriter):
 
     # -----------------------------------------------
     # Document section
-    
+
 
     def _writeDocument(self):
 
@@ -193,14 +193,14 @@ class Rtf15Writer(PythWriter):
         if self.addSpacing is not None:
             self.target.write(r'\sb%d' % self.addSpacing)
             self.addSpacing = None
-        
+
         # Space after the paragraph,
         # expressed in units of god-knows-what
         self.target.write(r'\sa%d{' % spacing)
-        
+
         for text in paragraph.content:
             self._text(text)
-            
+
         self.target.write(r'}\par\pard' '\n')
 
 
@@ -241,12 +241,12 @@ class Rtf15Writer(PythWriter):
         for prop in text.properties:
             if prop in _styleFlags:
                 props.append(_styleFlags[prop])
-        
+
         if props:
             self.target.write("".join(props) + " ")
 
-        
-        for run in text.content:                    
+
+        for run in text.content:
             for unichar in run:
                 if unichar == '\n':
                     self.target.write(r'\line ')
@@ -257,7 +257,7 @@ class Rtf15Writer(PythWriter):
                     self.target.write(str(unichar))
                 else:
                     self.target.write(r'\u%d?' % point)
-            
+
         if props:
             self.target.write("".join("%s0" % p for p in props) + " ")
 

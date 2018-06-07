@@ -1,8 +1,8 @@
 import sys
 import os.path
 
-from pyth.plugins.rtf15.reader import Rtf15Reader
-from pyth.plugins.xhtml.writer import XHTMLWriter
+from pyth3.plugins.rtf15.reader import Rtf15Reader
+from pyth3.plugins.xhtml.writer import XHTMLWriter
 
 
 if len(sys.argv) > 1:

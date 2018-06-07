@@ -3,7 +3,7 @@ import unittest
 import os.path
 import glob
 
-from pyth.plugins.rtf15.reader import Rtf15Reader
+from pyth3.plugins.rtf15.reader import Rtf15Reader
 
 
 class TestRtfMeta(type):

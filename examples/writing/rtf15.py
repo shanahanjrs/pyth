@@ -1,4 +1,4 @@
-from pyth.plugins.rtf15.writer import Rtf15Writer
+from pyth3.plugins.rtf15.writer import Rtf15Writer
 import pythonDoc
 
 doc = pythonDoc.buildDoc()

@@ -2,8 +2,8 @@
 Write Pyth documents straight in Python, a la Nevow's Stan.
 """
 
-from pyth.format import PythReader
-from pyth.document import *
+from pyth3.format import PythReader
+from pyth3.document import *
 
 
 def _convert(content):
@@ -28,8 +28,8 @@ class _Shortcut(object):
 
     def asDict(self):
         return dict(((self.key, True),))
-        
-    
+
+
 BOLD = _Shortcut("bold")
 ITALIC = _Shortcut("italic")
 UNDERLINE = _Shortcut("underline")
@@ -42,15 +42,15 @@ def _MetaPythonBase():
     Return a metaclass which implements __getitem__,
     allowing e.g. P[...] instead of P()[...]
     """
-    
+
     class MagicGetItem(type):
         def __new__(mcs, name, bases, dict):
             klass = type.__new__(mcs, name, bases, dict)
             mcs.__getitem__ = lambda _, k: klass()[k]
             return klass
-            
+
     return MagicGetItem
-        
+
 
 
 class _PythonBase(object):
@@ -61,7 +61,7 @@ class _PythonBase(object):
 
     def __init__(self, *shortcuts, **properties):
         self.properties = properties.copy()
-        
+
         for shortcut in shortcuts:
             self.properties.update(shortcut.asDict())
 
@@ -83,7 +83,7 @@ class _PythonBase(object):
             self.content.append(item)
 
         return self
-    
+
 
     def __str__(self):
         return "%s(%s) [ %s ]" % (
@@ -94,7 +94,7 @@ class _PythonBase(object):
 
 
 class P(_PythonBase):
-    __metaclass__ = _MetaPythonBase()    
+    __metaclass__ = _MetaPythonBase()
     pythType = Paragraph
 
 
@@ -103,12 +103,12 @@ class LE(_PythonBase):
     pythType = ListEntry
 
 class L(_PythonBase):
-    __metaclass__ = _MetaPythonBase()    
+    __metaclass__ = _MetaPythonBase()
     pythType = List
 
 
 class T(_PythonBase):
-    __metaclass__ = _MetaPythonBase()    
+    __metaclass__ = _MetaPythonBase()
     __repr__ = _PythonBase.__str__
     pythType = Text
 

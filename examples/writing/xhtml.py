@@ -1,4 +1,4 @@
-from pyth.plugins.xhtml.writer import XHTMLWriter
+from pyth3.plugins.xhtml.writer import XHTMLWriter
 import pythonDoc
 
 

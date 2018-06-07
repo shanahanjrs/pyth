@@ -16,7 +16,7 @@ class PythReader(object):
         source: An object to read the document from.
         Usually (but not necessarily) a file object.
 
-        Returns: A pyth.document.Document object.
+        Returns: A pyth3.document.Document object.
         """
         pass
 
@@ -32,8 +32,8 @@ class PythWriter(object):
     @classmethod
     def write(self, document, target=None):
         """
-        document: An instance of pyth.document.Document
-        
+        document: An instance of pyth3.document.Document
+
         target: An object to write the document to.
         Usually (but not necessarily) a file object.
         If target is None, return something sensible

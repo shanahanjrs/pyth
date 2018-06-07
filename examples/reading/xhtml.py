@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from pyth.plugins.xhtml.reader import XHTMLReader
-from pyth.plugins.xhtml.writer import XHTMLWriter
+from pyth3.plugins.xhtml.reader import XHTMLReader
+from pyth3.plugins.xhtml.writer import XHTMLWriter
 import xhtml
 
 from cStringIO import StringIO

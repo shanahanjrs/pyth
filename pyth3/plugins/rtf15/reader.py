@@ -8,8 +8,8 @@ but may not ignore all necessary control groups.
 """
 import string, re
 
-from pyth import document
-from pyth.format import PythReader
+from pyth3 import document
+from pyth3.format import PythReader
 
 from six import PY3
 
@@ -101,7 +101,7 @@ class Rtf15Reader(PythReader):
         self.source.seek(0)
 
         if self.source.read(5) != r"{\rtf":
-            from pyth.errors import WrongFileType
+            from pyth3.errors import WrongFileType
             raise WrongFileType("Doesn't look like an RTF file")
 
         self.source.seek(0)

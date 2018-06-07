@@ -4,9 +4,9 @@ Read documents from xhtml
 
 import BeautifulSoup
 
-from pyth import document
-from pyth.format import PythReader
-from pyth.plugins.xhtml.css import CSS
+from pyth3 import document
+from pyth3.format import PythReader
+from pyth3.plugins.xhtml.css import CSS
 
 
 class XHTMLReader(PythReader):
@@ -112,7 +112,7 @@ class XHTMLReader(PythReader):
 
     def process_text(self, node):
         """
-        Return a pyth Text object from a BeautifulSoup node or None if
+        Return a pyth3 Text object from a BeautifulSoup node or None if
         the text is empty.
         """
         text = node.string.strip()
@@ -138,7 +138,7 @@ class XHTMLReader(PythReader):
 
     def process_into(self, node, obj):
         """
-        Process a BeautifulSoup node and fill its elements into a pyth
+        Process a BeautifulSoup node and fill its elements into a pyth3
         base object.
         """
         if isinstance(node, BeautifulSoup.NavigableString):
@@ -147,7 +147,7 @@ class XHTMLReader(PythReader):
                 obj.append(text)
             return
         if node.name == 'p':
-            # add a new paragraph into the pyth object
+            # add a new paragraph into the pyth3 object
             new_obj = document.Paragraph()
             obj.append(new_obj)
             obj = new_obj

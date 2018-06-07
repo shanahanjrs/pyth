@@ -1,4 +1,4 @@
-from pyth.plugins.latex.writer import LatexWriter
+from pyth3.plugins.latex.writer import LatexWriter
 import pythonDoc
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from pyth.plugins.rtf15.reader import Rtf15Reader
-from pyth.plugins.pdf.writer import PDFWriter
+from pyth3.plugins.rtf15.reader import Rtf15Reader
+from pyth3.plugins.pdf.writer import PDFWriter
 
 doc = Rtf15Reader.read(open("../reading/sample.rtf"))
 

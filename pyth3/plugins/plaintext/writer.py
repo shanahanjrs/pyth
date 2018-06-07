@@ -2,8 +2,8 @@
 Render documents as plaintext.
 """
 
-from pyth import document
-from pyth.format import PythWriter
+from pyth3 import document
+from pyth3.format import PythWriter
 
 from cStringIO import StringIO
 
@@ -48,7 +48,7 @@ class PlaintextWriter(PythWriter):
         for text in paragraph.content:
             content.append(u"".join(text.content))
         content = u"".join(content).encode("utf-8")
-            
+
         for line in content.split("\n"):
             self.target.write("  " * self.indent)
             self.target.write(prefix)
@@ -59,7 +59,7 @@ class PlaintextWriter(PythWriter):
 
     def list(self, list, prefix=None):
         self.indent += 1
-        for (i, entry) in enumerate(list.content):           
+        for (i, entry) in enumerate(list.content):
             for (j, paragraph) in enumerate(entry.content):
                 prefix = "* " if j == 0 else "  "
                 handler = self.paragraphDispatch[paragraph.__class__]
@@ -69,4 +69,4 @@ class PlaintextWriter(PythWriter):
 
 
 
-            
+

@@ -9,8 +9,8 @@ import os
 import sys
 import BeautifulSoup
 
-from pyth.plugins.latex.writer import LatexWriter
-from pyth.plugins.python.reader import *
+from pyth3.plugins.latex.writer import LatexWriter
+from pyth3.plugins.python.reader import *
 
 
 class TestWriteLatex(unittest.TestCase):

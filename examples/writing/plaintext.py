@@ -1,4 +1,4 @@
-from pyth.plugins.plaintext.writer import PlaintextWriter
+from pyth3.plugins.plaintext.writer import PlaintextWriter
 import pythonDoc
 
 doc = pythonDoc.buildDoc()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pyth.plugins.python.reader import *
+from pyth3.plugins.python.reader import *
 
 def buildDoc():
     return PythonReader.read((        

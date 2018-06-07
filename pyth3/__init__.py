@@ -7,11 +7,11 @@ import os.path
 __version__ = '0.5.6'
 
 writerMap = {
-    '.rtf': 'pyth.plugins.rtf15.writer.Rtf15Writer',
-    '.html': 'pyth.plugins.xhtml.writer.XHTMLWriter',
-    '.xhtml': 'pyth.plugins.xhtml.writer.XHTMLWriter',
-    '.txt': 'pyth.plugins.plaintext.writer.PlaintextWriter',
-    '.pdf': 'pyth.plugins.pdf.writer.PDFWriter',
+    '.rtf': 'pyth3.plugins.rtf15.writer.Rtf15Writer',
+    '.html': 'pyth3.plugins.xhtml.writer.XHTMLWriter',
+    '.xhtml': 'pyth3.plugins.xhtml.writer.XHTMLWriter',
+    '.txt': 'pyth3.plugins.plaintext.writer.PlaintextWriter',
+    '.pdf': 'pyth3.plugins.pdf.writer.PDFWriter',
 }
 
 
@@ -50,4 +50,4 @@ def namedObject(name):
     classSplit = name.split('.')
     module = namedModule('.'.join(classSplit[:-1]))
     return getattr(module, classSplit[-1])
-    
+

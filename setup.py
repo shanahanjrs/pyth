@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pyth",
+    name="pyth3",
     version="0.6.1",
     packages=find_packages(),
     zip_safe=False,
@@ -10,7 +10,7 @@ setup(
     description="Python text markup and conversion",
     author="Brendon Hogger",
     author_email="brendonh@gmail.com",
-    url="http://wiki.github.com/brendonh/pyth",
+    url="http://wiki.github.com/brendonh/pyth3",
     long_description=open('README').read(),
 
     classifiers=[

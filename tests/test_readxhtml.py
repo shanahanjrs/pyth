@@ -5,8 +5,8 @@ Unit tests of the xhtml reader.
 
 import unittest
 
-import pyth.document
-from pyth.plugins.xhtml.reader import XHTMLReader
+import pyth3.document
+from pyth3.plugins.xhtml.reader import XHTMLReader
 
 
 class TestReadXHTML(unittest.TestCase):
@@ -17,7 +17,7 @@ class TestReadXHTML(unittest.TestCase):
         """
         xhtml = "<div></div>"
         doc = XHTMLReader.read(xhtml)
-        self.assert_(isinstance(doc, pyth.document.Document))
+        self.assert_(isinstance(doc, pyth3.document.Document))
         self.assert_(not doc.content)
 
     def test_paragraphs(self):
@@ -28,9 +28,9 @@ class TestReadXHTML(unittest.TestCase):
         doc = XHTMLReader.read(xhtml)
         self.assert_(len(doc.content) == 3)
         for i, p in enumerate(doc.content):
-            self.assert_(isinstance(p, pyth.document.Paragraph))
+            self.assert_(isinstance(p, pyth3.document.Paragraph))
             self.assert_(len(p.content) == 1)
-            self.assert_(isinstance(p.content[0], pyth.document.Text))
+            self.assert_(isinstance(p.content[0], pyth3.document.Text))
             text = p.content[0]
             self.assert_(len(text.content) == 1)
             self.assert_(text.content[0] == 'p%d' % i)

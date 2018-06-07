@@ -4,8 +4,8 @@ Render documents as XHTML fragments
 
 
 
-from pyth import document
-from pyth.format import PythWriter
+from pyth3 import document
+from pyth3.format import PythWriter
 
 from cStringIO import StringIO
 
@@ -50,21 +50,21 @@ class XHTMLWriter(PythWriter):
             document.List: self._list,
             document.Paragraph: self._paragraph
         }
-        
+
 
     def go(self):
 
         self.listLevel = -1
-        
+
         tag = Tag("div")
-        
+
         for element in self.document.content:
             handler = self.paragraphDispatch[element.__class__]
             tag.content.extend(handler(element))
 
         tag.render(self.target)
         return self.target
-    
+
 
     def _paragraph(self, paragraph):
         p = Tag("p")
@@ -79,12 +79,12 @@ class XHTMLWriter(PythWriter):
 
     def _list(self, lst):
         self.listLevel += 1
-        
+
         ul = Tag("ul")
 
         if self.cssClasses:
             ul.attrs['class'] = 'pyth_list_%s' % self.listLevel
-        
+
         for entry in lst.content:
             li = Tag("li")
             for element in entry.content:
@@ -93,7 +93,7 @@ class XHTMLWriter(PythWriter):
             ul.content.append(li)
 
         self.listLevel -= 1
-            
+
         return [ul]
 
 
@@ -130,7 +130,7 @@ _prettyBreak = object()
 
 
 class Tag(object):
-    
+
     def __init__(self, tag, attrs=None, content=None):
         self.tag = tag
         self.attrs = attrs or {}
@@ -155,13 +155,13 @@ class Tag(object):
 
         if self.tag is not None:
             target.write('</%s>' % self.tag)
-        
+
 
     def attrString(self):
         return " ".join(
             '%s="%s"' % (k, quoteAttr(v))
             for (k, v) in self.attrs.iteritems())
-            
+
 
     def __repr__(self):
         return "T(%s)[%s]" % (self.tag, repr(self.content))

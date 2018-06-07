@@ -2,8 +2,8 @@
 Render documents as reStructuredText.
 """
 
-from pyth import document
-from pyth.format import PythWriter
+from pyth3 import document
+from pyth3.format import PythWriter
 
 from cStringIO import StringIO
 
@@ -39,7 +39,7 @@ class RSTWriter(PythWriter):
 
     def text(self, text):
         """
-        process a pyth text and return the formatted string
+        process a pyth3 text and return the formatted string
         """
         ret = u"".join(text.content)
         if 'url' in text.properties:
@@ -56,7 +56,7 @@ class RSTWriter(PythWriter):
 
     def paragraph(self, paragraph, prefix=""):
         """
-        process a pyth paragraph into the target
+        process a pyth3 paragraph into the target
         """
         content = []
         for text in paragraph.content:
@@ -82,7 +82,7 @@ class RSTWriter(PythWriter):
 
     def list(self, list, prefix=None):
         """
-        Process a pyth list into the target
+        Process a pyth3 list into the target
         """
         self.indent += 1
         for (i, entry) in enumerate(list.content):

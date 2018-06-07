@@ -8,9 +8,9 @@ reStructuredText writer output.
 from cStringIO import StringIO
 import docutils.core
 
-from pyth import document
-from pyth.format import PythWriter
-from pyth.plugins.rst.writer import RSTWriter
+from pyth3 import document
+from pyth3.format import PythWriter
+from pyth3.plugins.rst.writer import RSTWriter
 
 
 class LatexWriter(PythWriter):
@@ -18,7 +18,7 @@ class LatexWriter(PythWriter):
     @classmethod
     def write(klass, document, target=None, stylesheet=""):
         """
-        convert a pyth document to a latex document
+        convert a pyth3 document to a latex document
 
         we can specify a stylesheet as a latex document fragment that
         will be inserted after the headers.  This way we can override

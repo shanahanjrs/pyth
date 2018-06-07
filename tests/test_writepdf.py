@@ -9,8 +9,8 @@ import os
 import sys
 import BeautifulSoup
 
-from pyth.plugins.pdf.writer import PDFWriter
-from pyth.plugins.python.reader import *
+from pyth3.plugins.pdf.writer import PDFWriter
+from pyth3.plugins.python.reader import *
 
 
 class TestWritePDF(unittest.TestCase):
