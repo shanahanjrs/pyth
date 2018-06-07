@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pyth3",
-    version="0.6.0",
+    name="pyth",
+    version="0.6.1",
     packages=find_packages(),
     zip_safe=False,
     install_requires=['six'],
@@ -20,6 +20,7 @@ setup(
         "Programming Language :: Python :: 2.5",
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
         "Topic :: Office/Business",
         "Topic :: Software Development :: Libraries",
         "Topic :: Text Editors :: Word Processors",
